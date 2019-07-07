@@ -20,6 +20,7 @@ class StaticMethods():
                 collection.update({"document_id": number}, {'$push': {name: {str(size): txt[10:]}}})
                 print("Dodano nowy cytat")
                 return "Dodano nowy cytat"
+    
     @staticmethod
     def get_random_record(name, number):
         records = collection.find_one({"document_id": number})

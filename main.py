@@ -8,12 +8,7 @@ import json
 import os
 import sys
 import datetime
-
-try:
-    from Cogs.StaticMethods import StaticMethods
-    print("Import success")
-except ImportError:
-    print("Relative import failed")
+import traceback
 
 bot = commands.Bot(command_prefix="!")
 
@@ -25,6 +20,7 @@ if __name__=="__main__":
         try:
             bot.load_extension(extension)
         except Exception as e:
-            print("Caught an exception")
+            print(f"Caught an exception {e}", file=sys.stderr)
+            traceback.print_exc()
     
 bot.run(os.environ["SEC_KEY"])

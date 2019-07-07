@@ -11,7 +11,7 @@ class Events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        await self.bot.process_commands(message)
+        print(message.content)
 
 def setup(bot):
     bot.add_cog(Events(bot))
