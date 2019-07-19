@@ -10,6 +10,7 @@ class School(commands.Cog, name="Szkoła itd."):
 
     @commands.command()
     async def updateplan(self, ctx):
+        """Developer command"""
         role_names = [role.name for role in ctx.message.author.roles]
         if "Developer" in role_names:
             StaticMethods.replace(ctx.message.content[12:])

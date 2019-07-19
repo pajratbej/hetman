@@ -24,6 +24,7 @@ class Memes(commands.Cog, name="Meme i jojo"):
 
     @commands.command(pass_context=True)
     async def game(self, ctx):
+        """Developer command"""
         role_names = [role.name for role in ctx.message.author.roles]
         if "Developer" in role_names:
             await self.bot.change_presence(activity=discord.Game(name=ctx.message.content[6:]))

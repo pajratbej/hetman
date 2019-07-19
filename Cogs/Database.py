@@ -9,6 +9,7 @@ class Database(commands.Cog, name="Cytaty"):
 
     @commands.command()
     async def addcytat(self, ctx):
+        """Developer command"""
         role_names = [role.name for role in ctx.message.author.roles ]
         if "Developer" in role_names:
             await ctx.send(StaticMethods.push_record("cytat", ctx.message.content, 1))
