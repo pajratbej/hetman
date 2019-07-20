@@ -27,7 +27,7 @@ class Birthday(commands.Cog, name="Polecenia urodzinowe (tylko 20 lipca)"):
             
 
             if self.pieces_eaten[str(ctx.message.author.id)] == 3:
-                await ctx.send("Zjadłeś już 2 kawałki tortu. Zostaw coś dla reszty bambaryło 👿")
+                await ctx.send("Zjadłeś już 3 kawałki tortu. Zostaw coś dla reszty bambaryło 👿")
             else:
                 temp = self.cake[0:len(self.cake)-1]
                 self.cake = temp
