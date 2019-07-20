@@ -48,13 +48,16 @@ class Birthday(commands.Cog, name="Polecenia urodzinowe (tylko 20 lipca)"):
             await ctx.send("Pozostało " + str(len(self.cake)) + " kawałków tortu.")
 
     @commands.command()
-    async def throwaway(self, ctx):
+    async def bin(self, ctx):
         """Developer command"""
         role_names = [role.name for role in ctx.message.author.roles ]
         if "Developer" in role_names:
-            self.cake = []
-            self.pieces_eaten = {}
-            await ctx.send(str(ctx.message.author.nick) + " wyrzucił tort bo nikt nie chciał jeść 😭")
+            if self.cake:
+                self.cake = []
+                self.pieces_eaten = {}
+                await ctx.send(str(ctx.message.author.nick) + " wyrzucił tort bo nikt nie chciał jeść 😭")
+            else:
+                await ctx.send("Nie ma upieczonego tortu 😔. Użyj !bake aby upiec mi tort :3")
         else:
             await ctx.send("Odmowa dostępu")
 
