@@ -24,12 +24,7 @@ class Memes(commands.Cog, name="Meme i jojo"):
 
     @commands.command(pass_context=True)
     async def game(self, ctx):
-        """Developer command"""
-        role_names = [role.name for role in ctx.message.author.roles]
-        if "Developer" in role_names:
-            await self.bot.change_presence(activity=discord.Game(name=ctx.message.content[6:]))
-        else:
-            await ctx.send("Odmowa dostępu")
+        await self.bot.change_presence(activity=discord.Game(name=ctx.message.content[6:]))
             
     @commands.command(pass_context=True)
     async def h(self, ctx):
@@ -59,10 +54,7 @@ class Memes(commands.Cog, name="Meme i jojo"):
         embed.set_image(url="https://i.postimg.cc/YCr7211t/hetman.png")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
-    async def alexa(self, ctx):
-        await ctx.send("this is so sad\nalexa play despacito \n https://www.youtube.com/watch?v=kJQP7kiw5Fk")
-
+    
     @commands.command(pass_context=True)
     async def kys(self, ctx):
         await ctx.send("https://www.wikihow.com/Tie-a-Hangman%27s-Noose")
