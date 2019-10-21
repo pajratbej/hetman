@@ -26,6 +26,10 @@ class School(commands.Cog, name="Szkoła itd."):
     @commands.command()
     async def gac(self, ctx):
         await ctx.send("http://www.pangac.c0.pl")
+    
+    @commands.command()
+    async def siuda(self, ctx):
+        await ctx.send("http://siudyzm.cba.pl")
 
     @commands.command()
     async def plan(self, ctx):
