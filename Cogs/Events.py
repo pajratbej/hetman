@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from .StaticMethods import StaticMethods
 
 class Events(commands.Cog):
     def __init__(self, bot):
@@ -7,7 +8,7 @@ class Events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        await self.bot.change_presence(activity=discord.Game(name="Fortnite"))
+        await self.bot.change_presence(activity=discord.Game(name=StaticMethods.getGame()))
 
     @commands.Cog.listener()
     async def on_message(self, message):

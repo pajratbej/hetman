@@ -48,3 +48,12 @@ class StaticMethods():
     def getPlan():
         record = collection.find_one({"document_id": 3})
         return record["plan"]
+
+    @staticmethod
+    def getGame():
+        record = collection.find_one({"document_id":3})
+        return record["game"]
+
+    @staticmethod
+    def setGame(string):
+        collection.update({"document_id": 3},{'$set': {"game": string}})
