@@ -24,7 +24,7 @@ class Memes(commands.Cog, name="Meme i jojo"):
 
     @commands.command(pass_context=True)
     async def game(self, ctx):
-        StaticMethods.setGame(ctx.message,content[6:])
+        StaticMethods.setGame(ctx.message.content[6:])
         await self.bot.change_presence(activity=discord.Game(name=StaticMethods.getGame))
             
     @commands.command(pass_context=True)
