@@ -21,7 +21,7 @@ class Database(commands.Cog, name="Cytaty"):
         if(number!=None):
             try:
                 print(StaticMethods.get_specific_record("cytat", 1, int(number))[2:-2])
-                await ctx.send("Cytat #"+number+"\"" + StaticMethods.get_specific_record("cytat", 1, int(number))[2:-2] + "\"")
+                await ctx.send("Cytat #"+number+" \"" + StaticMethods.get_specific_record("cytat", 1, int(number))[2:-2] + "\"")
             except Exception:
                 print("Nie ma takiego cytatu")
                 await ctx.send("Nie ma takiego cytatu!")
