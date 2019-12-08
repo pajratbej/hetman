@@ -16,7 +16,9 @@ class Memes(commands.Cog, name="Meme i jojo"):
                 title="OwO",
                 Color=Colour.blue()
             )
-            embed.set_image(url=StaticMethods.get_random_record("links", 2)[2: -2])
+            obraz = StaticMethods.get_random_record("links", 2)[2: -2]
+            print(obraz)
+            embed.set_image(url=obraz)
             print(ctx.message.channel)
             await ctx.send(embed=embed)
         else:
